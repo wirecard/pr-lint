@@ -1,0 +1,12 @@
+name: 'Check PR branch name'
+description: 'Automatically checks branch validation'
+inputs:
+  branch:
+    description: 'Branch name'
+    required: true
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.branch }}
